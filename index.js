@@ -41,6 +41,7 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 app.all('*', function(req, res, next){req.syspath 	= __dirname; next();} )
 
 app.use('/', express.static(path.join(__dirname, 'webroot')));
+app.get('/', function (req, res){ res.sendFile(__dirname + '/webroot/Default.html'); })
 
 
 app.get('/favicon.png', function(req, res){	res.sendStatus(200); });
