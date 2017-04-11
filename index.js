@@ -1,12 +1,12 @@
-var 	http					= require('http'),
+var 		http					= require('http'),
 		express					= require('express'),
 		mongoose				= require('mongoose'),
 		path					= require('path'),
 		bodyParser				= require('body-parser');
 
-var		app						= express();
-var 	http					= require('http').Server(app);
-
+var		app					= express();
+var 		http					= require('http').Server(app);
+var 		aport 					= 80;
 /*
 // db config 
 var 	config 					= {
@@ -26,15 +26,15 @@ db.once('open', function() {
 */
 
 
-var		xPolicy			    = function (req, res, next){
+var xPolicy			    = function (req, res, next){
 	res.header("Access-Control-Allow-Origin", "*");
 	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
-    next();
+    	res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+    	next();
 };
 app.use(xPolicy);
 
-app.set('port', process.env.PORT || 80);
+app.set('port', process.env.PORT || aport);
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
