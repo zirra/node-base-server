@@ -6,6 +6,7 @@ var 		http					= require('http'),
 
 var		app					= express();
 var 		http					= require('http').Server(app);
+var 		myapi 					= require('apimain');
 var 		aport 					= 80;
 /*
 // db config 
@@ -40,6 +41,7 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
 app.all('*', function(req, res, next){req.syspath 	= __dirname; next();} )
 
+app.use('/api', myapi);
 app.use('/', express.static(path.join(__dirname, 'webroot')));
 app.get('/', function (req, res){ res.sendFile(__dirname + '/webroot/Default.html'); })
 
