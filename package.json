@@ -1,0 +1,14 @@
+{
+	"name" : "devsite",
+	"description" : "devsite",
+	"version" : "0.0.1",
+	"private" : "true",
+		"dependencies" : {
+		"body-parser": "^1.9.2",	
+    	"emailjs": "^0.x.x",
+    	"express": "4.x.x",
+        "mongodb": "^2.0.55",
+    	"mongoose": "~4.4",
+    	"request": "2.67.x"
+	}
+}
