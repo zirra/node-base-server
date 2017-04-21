@@ -2,7 +2,7 @@
 	"name" : "devsite",
 	"description" : "devsite",
 	"version" : "0.0.1",
-	"private" : "true",
+	"private" : true,
 		"dependencies" : {
 		"body-parser": "^1.9.2",	
     	"emailjs": "^0.x.x",
